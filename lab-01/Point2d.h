@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include <iostream>
 #include <map>
 
 class Point2d
@@ -29,3 +30,5 @@ public:
 
 Point2d operator+(const Point2d& p, const Point2d& q);
 bool operator!=(const Point2d& p, const Point2d& q);
+
+std::ostream& operator<<(std::ostream& out, const Point2d& p);

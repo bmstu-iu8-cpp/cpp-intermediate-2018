@@ -96,3 +96,9 @@ bool operator!=(const Point2d & p, const Point2d & q)
     // реализовываем != , через ==
     return !(p == q);
 }
+
+std::ostream & operator<<(std::ostream & out, const Point2d & p)
+{
+    out << p[0] << " " << p[1];
+    return out;
+}
