@@ -13,5 +13,15 @@ script:
   - cd lab-01
   - mkdir build && cd build
   - cmake .. && make
+  - ./executable
   - cd ../..
-
+  
+  - cd lab-02
+  - mkdir build && cd build
+  - cmake .. && make
+  - ./executable
+  - cd sorting
+  - mkdir build && cd build
+  - cmake .. && make
+  - ./executable
+  - cd ../../..
