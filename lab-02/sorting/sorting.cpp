@@ -5,7 +5,7 @@
 #include <vector>
 
 template <class It>
-void bad_sort(It first, It last)
+void badSort(It first, It last)
 {
     for (It i = first; i != last; ++i)
     {
@@ -20,7 +20,7 @@ void bad_sort(It first, It last)
 }
 
 template <class It, class Cmp>
-void bad_sort(It first, It last, Cmp cmp)
+void badSort(It first, It last, Cmp cmp)
 {
     for (It i = first; i != last; ++i)
     {
@@ -60,19 +60,19 @@ int main()
 {
     std::vector<int> v = {15, 25, -11, 10, 13};
 
-    bad_sort(v.begin(), v.end());
+    badSort(v.begin(), v.end());
     std::copy(v.begin(), v.end(), std::ostream_iterator<int>(std::cout, " "));
     std::cout << std::endl;
 
 
     Great gr;
-    bad_sort(v.begin(), v.end(), gr);
+    badSort(v.begin(), v.end(), gr);
     std::copy(v.begin(), v.end(), std::ostream_iterator<int>(std::cout, " "));
     std::cout << std::endl;
 
 
     CountingLess<int> less;
-    bad_sort(v.begin(), v.end(), std::ref(less));
+    badSort(v.begin(), v.end(), std::ref(less));
     std::copy(v.begin(), v.end(), std::ostream_iterator<int>(std::cout, " "));
     std::cout << std::endl;
     std::cout << "less.Count = " << less.Count << std::endl;
