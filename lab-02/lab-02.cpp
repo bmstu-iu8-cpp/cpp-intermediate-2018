@@ -1,3 +1,4 @@
+#include <cstring>
 #include <string>
 #include <vector>
 
@@ -20,11 +21,11 @@ const char* min(const char* a, const char* b)
 int main()
 {
     {
-        std::cout << min<int>(1, -1) << std::endl;
+        std::cout << min(1, -1) << std::endl;
 
         std::cout << min(0.1, -1.1) << std::endl;
 
-        std::cout << min(std::string("aaa"), std::string("bbb")) << std::endl;
+        std::cout << min<std::string>("aaa", "bbb") << std::endl;
 
         const char * str1 = "aaa";
         const char * str2 = "bbb";
@@ -40,7 +41,7 @@ int main()
 
     {
         Point2d<float> p(1.2, 1.2);
-        // p.some_error_func();
+        // p.compilationError();
 
         Point2d<float> pi(1, 2);
     }
