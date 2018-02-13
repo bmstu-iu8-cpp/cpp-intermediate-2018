@@ -73,7 +73,7 @@ public:
 
     size_t compilationError() const
     {
-        std::vector<int> v;
+        T v;
         return v.Size();
     }
 };
