@@ -1,13 +1,24 @@
 language: cpp
+sudo: true
 
 notifications:
   email: false
 
 matrix:
   include:
+    # works on Trusty
     - os: linux
-      compiler: g++-5
-      env: COMPILER=g++ -std=c++11
+      addons:
+        apt:
+          sources:
+            - llvm-toolchain-trusty-5.0
+          packages:
+            - clang-5.0
+      env:
+        - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
+
+before_install:
+    - eval "${MATRIX_EVAL}"
 
 script:
   - cd lab-01
@@ -25,3 +36,11 @@ script:
   - cmake .. && make
   - ./executable
   - cd ../../..
+
+  - cd lab-03
+  - mkdir build && cd build
+  - cmake .. && make
+  - ./solution_equation
+  - ./memory_leak
+  - ./raii
+  - cd ../..
