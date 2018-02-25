@@ -1,5 +1,5 @@
 #include <iostream>
-#include <exception>
+#include <stdexcept>
 
 struct Dummy
 {
