@@ -30,7 +30,7 @@ int main()
 {
     try
     {
-        Dummy * raw = new Dummy(2);
+        Dummy * raw = new Dummy();
         DummyRAII guard(raw);
 
         throw std::runtime_error("some error");
