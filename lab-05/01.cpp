@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <string>
 
 class Human
@@ -30,6 +30,9 @@ public:
     }
 };
 
+// public наследование говорит выражает отношение "является"
+// в нашем случае
+// Student является Human
 class Student
     : public Human
 {
