@@ -13,7 +13,8 @@ add_executable(memory_leak
     memory_leak.cpp
 )
 
-target_link_libraries(memory_leak -fsanitize=address)
+# disabled sanitizer
+target_link_libraries(memory_leak)
 
 add_executable(raii
     raii.cpp
