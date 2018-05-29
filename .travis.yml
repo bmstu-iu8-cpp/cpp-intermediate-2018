@@ -13,7 +13,7 @@ matrix:
           sources:
             - llvm-toolchain-trusty-5.0
           packages:
-            - clang-5.0
+            - packages: ['clang-5.0', 'libboost1.66-dev'] 
       env:
         - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
 
@@ -21,6 +21,12 @@ before_install:
     - eval "${MATRIX_EVAL}"
 
 script:
+  - cd lab-08
+  - mkdir build && cd build
+  - cmake .. && make
+  - ./executable
+  - cd ../..
+  
   - cd lab-01
   - mkdir build && cd build
   - cmake .. && make
