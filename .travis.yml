@@ -14,7 +14,8 @@ matrix:
             - ubuntu-toolchain-r-test
             - llvm-toolchain-trusty-5.0
           packages:
-            - packages: ['clang-5.0'] 
+            - clang-5.0
+            - libboost1.55-dev
       env:
         - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
 
